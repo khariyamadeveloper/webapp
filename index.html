@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Портфолио — [Твоё Имя]</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: linear-gradient(90deg, #1cb5e0 0%, #000851 100%);
+      --bg: #101019;
+      --card: #191926;
+      --text: #f6f6f7;
+      --text-muted: #afbacd;
+      --border: #272739;
+      --shadow: 0 12px 40px 0 rgba(0,37,89,0.25);
+      --radius: 24px;
+      --transition: 0.3s cubic-bezier(.4,.2,.3,1);
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      letter-spacing: 0.03em;
+    }
+    .gradient-text {
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      background: var(--bg);
+      position: relative;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin-bottom: 32px;
+      border: 6px solid #1cb5e0;
+      box-shadow: 0 4px 32px #1cb5e05e;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 60px;
+      line-height: 1;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 400;
+      margin: 18px 0 36px 0;
+      color: var(--text-muted);
+    }
+    nav {
+      display: flex;
+      gap: 36px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 999px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      z-index: 0;
+      pointer-events: none;
+    }
+    section {
+      margin: 64px auto 0 auto;
+      max-width: 1120px;
+      width: 92vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+      margin: 32px 0;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 32px;
+      min-width: 320px;
+      max-width: 370px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      border: 1.5px solid var(--border);
+      text-align: left;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-7px) scale(1.04) rotate(-1deg);
+      box-shadow: 0 16px 80px 0 #1CB5E066;
+      border: 2px solid #1cb5e0;
+    }
+    .card-title {
+      font-size: 26px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #61dafb;
+    }
+    .card-description {
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .socials {
+      margin: 36px 0 8px 0;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+    .socials a {
+      display: flex;
+      align-items: center;
+      background: var(--accent);
+      border-radius: 50%;
+      width: 53px;
+      height: 53px;
+      color: #fff;
+      font-size: 27px;
+      justify-content: center;
+      transition: box-shadow .29s;
+      border: none;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      box-shadow: 0 4px 36px #1cb5e085;
+      transform: scale(1.13);
+    }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      margin: 40px 0 10px 0;
+      font-size: 18px;
+    }
+
+    @media (max-width: 800px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 19px; }
+      .card-list { flex-direction: column; }
+      header { height: 70vh; }
+      .card { min-width: 77vw; }
+    }
+  </style>
+  <!-- Здесь можно подключить FontAwesome для иконок соцсетей -->
+  <script src="https://kit.fontawesome.com/cab8f2f3e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/0y0y0y0.png" alt="Аватар" class="avatar" /> <!-- Заменить на своё фото! -->
+    <h1>Твоё Имя <span class="gradient-text">Фамилия</span></h1>
+    <h2>Fullstack Developer • AI Enthusiast • Open Source</h2>
+    <nav>
+      <a href="#about">Обо мне</a>
+      <a href="#portfolio">Проекты</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <svg class="wave" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="url(#wave-gradient)" fill-opacity="0.9"
+        d="M0,100 C480,150 960,50 1440,100 L1440,120 L0,120 Z">
+      </path>
+      <defs>
+        <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1cb5e0"/>
+          <stop offset="100%" stop-color="#000851"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </header>
+  
+  <section id="about">
+    <h2 class="gradient-text">Обо мне</h2>
+    <p style="max-width: 600px; color: var(--text-muted); font-size: 19px; line-height: 1.7; text-align: center;">
+      Привет! Я [Имя Фамилия] — профессиональный разработчик с фокусом на современных web-технологиях, машинном обучении и интеграции с железом. Люблю создавать крутые проекты с красивым UI, автоматизировать задачи и экспериментировать с новыми фреймворками.
+    </p>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="gradient-text">Проекты</h2>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-title">Telegram Shop Bot</div>
+        <div class="card-description">Бот для Telegram с интеграцией оплаты, базой данных и удобной панелью управления. Всё на Python + aiogram.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Game Modding Toolkit</div>
+        <div class="card-description">Фреймворк для моддинга игр: инжектор, хукер и UI Overlay на C++ с автоматическим билдом и поддержкой плагинов.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Roblox Automation</div>
+        <div class="card-description">Скрипты-боты для автоматизации в Roblox и интеграция с внешними сервисами. Работа с API, безопасности и UI.</div>
+      </div>
+      <!-- Добавь свои проекты! -->
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2 class="gradient-text">Контакты</h2>
+    <div class="socials">
+      <a href="https://t.me/yourusername" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="mailto:your@email.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <!-- Добавь свои соцсети -->
+    </div>
+    <p style="color: var(--text-muted); font-size: 18px;">Свяжись со мной для сотрудничества или обсуждения проектов!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 <span class="gradient-text">[Твоё Имя]</span>. Сделано с ❤️ и JavaScript
+  </footer>
+</body>
+</html>
