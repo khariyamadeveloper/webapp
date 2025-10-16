@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ item.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+    function openModal() {
+        document.getElementById('paymentModal').style.display = 'block';
+    }
+    function closeModal() {
+        document.getElementById('paymentModal').style.display = 'none';
+    }
+    </script>
+</head>
+<body>
+    <div class="item-detail">
+        <img src="{{ item.logo_url }}" width="100">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+        <p>Цена: {{ item.price }} XTR Stars</p>
+        <button onclick="openModal()">КУПИТЬ</button>
+    </div>
+    <div id="paymentModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Оплата через Telegram Stars (XTR)</h3>
+            <form method="POST" action="/pay/{{ item.id }}">
+                <button type="submit">Оплатить {{ item.price }} XTR Stars</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
