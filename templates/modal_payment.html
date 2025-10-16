@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статус оплаты</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% if status == "success" %}
+        <h2>✅ Оплата прошла успешно!</h2>
+        <p>Вы приобрели: {{ item.title }}</p>
+    {% else %}
+        <h2>❌ Ошибка оплаты</h2>
+    {% endif %}
+    <a href="/">Назад к ассортименту</a>
+</body>
+</html>
